@@ -10,7 +10,7 @@ export default class App extends Component {
       calculationText: ""
     }
 
-    this.operations = ["C", '/', '*', '-', '+']
+    this.operations = ["DEL", '/', '*', '-', '+']
   }
 
   calculateResult() {
@@ -46,8 +46,8 @@ export default class App extends Component {
 
   operate(operation) {
     switch (operation) {
-      case "C":
-        let text = this.state.resultText.split(text)
+      case "DEL":
+        let text = this.state.resultText.split('')
         text.pop()
         this.setState({
           resultText: text.join('')
@@ -114,28 +114,27 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   white: {
-    color: 'black',
+    color: 'white',
   },
   btn: {
     flex: 1,
-    margin: 10,
     alignItems: 'center',
     alignSelf: 'stretch',
     justifyContent: 'center'
   },
   btntext: {
     fontSize: 36,
-    color: 'black',
+    color: 'white',
     fontFamily: 'sans-serif-light'
   },
   btnopstext: {
     fontSize: 24,
-    color: 'grey',
+    color: 'white',
     fontFamily: 'sans-serif-light'
   },
   resultText: {
     fontSize: 70,
-    color: 'grey',
+    color: 'black',
     fontFamily: 'sans-serif-light',
     paddingEnd: 10,
     paddingStart: 10,
